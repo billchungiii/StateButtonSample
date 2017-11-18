@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:StateButtonSample"
+             xmlns:render="clr-namespace:StateButtonSample.CustomRenderers"
+             x:Class="StateButtonSample.MainPage">
+
+    <StackLayout BackgroundColor="#060822">
+        <StackLayout.Resources >
+            <ResourceDictionary >
+                <Style TargetType="render:StateButton">
+                    <Setter Property="VerticalOptions" Value="Center"/>
+                    <Setter Property="HorizontalOptions" Value="Fill"/>
+                    <Setter Property="Margin" Value="12,4,12,4"/>
+                    <Setter Property="BackgroundColor" Value="#060822"/>
+                    <Setter Property="TextColor" Value="White"/>
+                    <Setter Property="Text" Value="Click Me!"/>
+                    <Setter Property="HeightRequest" Value="48"/>
+                    <Setter Property="BorderRadius" Value="15"/>
+                    <Setter Property="IsSelected" Value="false"/>                    
+                </Style>
+            </ResourceDictionary>
+        </StackLayout.Resources>
+        <StackLayout.Margin>
+            <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0,0,0,0"/>
+        </StackLayout.Margin>
+        <render:StateButton RoundedCorners="None"/>
+        <render:StateButton RoundedCorners="TopLeft"/>
+        <render:StateButton RoundedCorners="BottomLeft" />
+        <render:StateButton RoundedCorners="TopRight"/>
+        <render:StateButton RoundedCorners="BottomRight"/>
+        <render:StateButton RoundedCorners="TopLeft,BottomLeft"/>
+        <render:StateButton RoundedCorners="TopRight,BottomRight"/>
+        <render:StateButton RoundedCorners="TopLeft,TopRight"/>
+        <render:StateButton RoundedCorners="BottomLeft,BottomRight"/>
+        <render:StateButton RoundedCorners="All" Clicked="StateButton_Clicked" />
+    </StackLayout>
+</ContentPage>
